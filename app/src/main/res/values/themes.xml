@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<style name="Theme.OCRDemoForNutrition" parent="Theme.AppCompat.Light.NoActionBar">
+    <!-- Primary colors -->
+    <item name="colorPrimary">@color/purple_500</item>
+    <item name="colorPrimaryDark">@color/purple_700</item>
+    <item name="colorAccent">@color/teal_200</item>
+
+    <!-- Optional: change status bar, text appearances -->
+    <item name="android:windowBackground">@color/white</item>
+    <item name="android:textColor">@color/black</item>
+</style>
+
+</resources>

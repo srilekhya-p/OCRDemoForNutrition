@@ -1,0 +1,72 @@
+69 OCR_DEMO                com.example.ocrdemofornutrition      D  Recognized text:
+                                                                                                    BEST If Used By MAR 11 2027
+                                                                                                    M8CBC1
+                                                                                                    Nutrition Facts
+                                                                                                    1 serving per container
+                                                                                                    Serving size 1 pouch (74g)
+                                                                                                    Amount per serving
+                                                                                                    Calories
+                                                                                                    Total Fat 3.5g
+                                                                                                    Saturated Fat 1.5g
+                                                                                                    Trans Fat 0g
+                                                                                                    Cholesterol 40mg
+                                                                                                    Sodium 410mg
+                                                                                                    Total Carbohydrate 29
+                                                                                                    Dietary Fiber 0g
+                                                                                                    Total Sugars 2g
+                                                                                                    Great for
+                                                                                                    any occasion
+                                                                                                    Protein 16g
+                                                                                                    Viamin D 1.3mcg 6%
+                                                                                                    lron 0.6rmg 4%
+                                                                                                    Includes 2g Added Sugars
+                                                                                                    110
+                                                                                                    % Daily Value*
+                                                                                                    Bentonville, AR 72716
+                                                                                                    GONTAINS MILK, EGGS AND TUNA.
+                                                                                                    4%
+                                                                                                    DISTRIBUTED BY: Walmart Inc.,
+                                                                                                    PRODUCT OF THAILAND
+                                                                                                    Refrigerate after opening.
+                                                                                                    8%
+                                                                                                    13%
+                                                                                                    18%
+                                                                                                    1%
+                                                                                                    Calcium 8mg 0%
+                                                                                                    •Potassium 246mg 6%
+                                                                                                    0%
+                                                                                                    lie % Daiy Vaue DV) 1els you how mh a nưtient in aservng of lood
+                                                                                                    Ctiotes ba daily die. 2.000 caloies a day is used for general nutrion advice.
+                                                                                                    4%
+                                                                                                    OaTS SKPIACKTUNA WATERBJTTERUNSALTED), VINEGAR, WATER
+                                                                                                    NUTS, SUGAR.MILK, SOYBEAN OL, WHOLE EGG POWDER, SALT, ONON
+                                                                                                    ONDR NAURALMILKR AIOR (CORN MALTODEXTRIN,RLAVORINGS, MODFED
+                                                                                                    URN STARCH MEDAJM CHNTRG YCERNESC TOciHEROLS), XÁNTHAN GIM
+                                                                                                    TTANI VNDOnE COLOFO, PASETHNaUAGP
+                                                                                                    32%
+                                                                                                    On The Go
+                                                                                                    Camping
+                                                                                                    At The Gym
+                                                                                                    Sports Nutrition
+                                                                                                    This seafood has met the MSC's
+                                                                                                    global standard for sustainability.
+                                                                                                    www.msc.org
+                                                                                                    Do not use if pouch is
+                                                                                                    punctured or leaking prior
+                                                                                                    to purchase.
+                                                                                                    Method of catch: Wild caught.
+                                                                                                    May contain bones.
+                                                                                                    Return the package for
+                                                                                                    replacement or money back.
+                                                                                                    1-877-505-2267 or visit us
+                                                                                                    online at walmart.com
+                                                                                                    Gluten-Free
+                                                                                                    027168
+                                                                                                    MULT-LAYER
+                                                                                                    POUCH
+                                                                                                    how2recyY
+                                                                                                    o 7874-212834 4
+2025-09-09 17:39:29.824 13669-13687 EGL_emulation           com.example.ocrdemofornutrition      D  app_time_stats: avg=383.54ms min=14.33ms max=4867.72ms count=14
+2025-09-09 17:39:29.874 13669-13702 emofornutrition         com.example.ocrdemofornutrition      W  Verification of java.lang.Long com.google.android.gms.internal.mlkit_vision_text_common.zzjz.zzk(com.google.android.gms.internal.mlkit_vision_text_common.zzjz) took 108.067ms (27.76 bytecodes/s) (1328B approximate peak alloc)
+2025-09-09 17:39:29.980 13669-13701 TransportR...EventStore com.example.ocrdemofornutrition      D  Storing event with priority=VERY_LOW, name=FIREBASE_ML_SDK for destination cct
+2025-09-09 17:39:29.999 13669-13701 TransportR...oScheduler com.example.ocrdemofornutrition      D  Upload
