@@ -1,28 +1,46 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical"
     android:padding="16dp">
 
-    <ImageView
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Existing ImageView or Buttons go here -->
+		<ImageView
         android:id="@+id/imageView"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:scaleType="fitCenter"
         android:src="@drawable/baseline_image_24" />
 
-    <Button
+		<Button
         android:id="@+id/btnRecognize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Recognize Text" />
 
-    <TextView
-        android:id="@+id/textOutput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:textSize="16sp"
-        android:text="Detected text will appear here..." />
-</LinearLayout>
+        <TextView
+            android:id="@+id/tvRecognized"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:paddingBottom="8dp"
+            android:text="Recognized Nutrition Facts" />
+
+        <TableLayout
+            android:id="@+id/nutritionTable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            android:divider="@android:color/darker_gray"
+            android:showDividers="middle"
+            android:paddingTop="8dp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -15,6 +15,9 @@ import android.graphics.Rect
 import android.util.Log
 import com.google.mlkit.vision.text.Text
 import com.google.mlkit.vision.text.TextRecognizer
+import android.widget.TableLayout
+import android.widget.TableRow
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
         val imageView = findViewById<ImageView>(R.id.imageView)
         val btnRecognize = findViewById<Button>(R.id.btnRecognize)
-        val textOutput = findViewById<TextView>(R.id.textOutput)
+       // val textOutput = findViewById<TextView>(R.id.textOutput)
 
         // Load sample image from drawable
         val OgBitmap = BitmapFactory.decodeResource(resources, R.drawable.sample_bestby_vertical)
@@ -53,7 +56,7 @@ class MainActivity : AppCompatActivity() {
                         val croppedImage = InputImage.fromBitmap(cropped, 0)
                         imageView.setImageBitmap(cropped)
                         // Re-run ML Kit OCR on `cropped`
-                        processTextFromImage(recognizer, croppedImage, textOutput)
+                        processTextFromImage(recognizer, croppedImage)
                     }
                 }
 
@@ -67,8 +70,8 @@ class MainActivity : AppCompatActivity() {
         fun findNutritionBoundary(result: Text): Rect? {
         var startBox: Rect? = null
         var endBox: Rect? = null
-        var startPoints: Array<Point>? = null;
-        var endPoints: Array<Point>? = null;
+        var startPoints: Array<Point>? = null
+        var endPoints: Array<Point>? = null
 
                 //Log.d("OCR_BON", "All text:\n$resultText")
                 for (block in result.textBlocks) {
@@ -156,7 +159,7 @@ class MainActivity : AppCompatActivity() {
             .addOnSuccessListener { result ->
                 val resultText = result.text
                 Log.d("OCR_ALL", "All text:\n$resultText")
-                Log.d("OCR_DEMO", "starts here");
+                Log.d("OCR_DEMO", "starts here")
 
                 for (block in result.textBlocks) {
                     for (line in block.lines) {
@@ -186,25 +189,46 @@ class MainActivity : AppCompatActivity() {
     private fun processTextFromImage(
         recognizer: TextRecognizer,
         image: InputImage,
-        textOutput: TextView
     ) {
         recognizer.process(image)
             .addOnSuccessListener { visionText ->
-                textOutput.text = visionText.text
-
+                //print visionText.text is a string
+                val tableRows = NutritionParser.extractNutritionTable(visionText)
+               // NutritionParser.printTable(tableRows)
+                displayNutritionTable(tableRows)
             }
             .addOnFailureListener { e ->
-                "Error: ${e.message}".also { textOutput.text = it }
+                "Error: ${e.message}"
                 Log.e("OCR_DEMO", "OCR failed", e)
             }
     }
+
+    private fun displayNutritionTable(rows: List<NutritionRow>) {
+        val tableLayout = findViewById<TableLayout>(R.id.nutritionTable)
+        tableLayout.removeAllViews()
+
+        for (row in rows) {
+            val tableRow = TableRow(this)
+            tableRow.layoutParams = TableRow.LayoutParams(
+                TableRow.LayoutParams.MATCH_PARENT,
+                TableRow.LayoutParams.WRAP_CONTENT
+            )
+
+            val nutrientTextView = TextView(this)
+            nutrientTextView.text = row.leftCell
+            nutrientTextView.setPadding(8, 8, 16, 8)
+            nutrientTextView.textSize = 15f
+
+            val percentTextView = TextView(this)
+            percentTextView.text = row.rightCell ?: ""
+            percentTextView.setPadding(8, 8, 8, 8)
+            percentTextView.textSize = 15f
+            percentTextView.textAlignment = TextView.TEXT_ALIGNMENT_TEXT_END
+
+            tableRow.addView(nutrientTextView)
+            tableRow.addView(percentTextView)
+
+            tableLayout.addView(tableRow)
+        }
+    }
 }
-
-
-//@Preview(showBackground = true)
-//@Composable
-//fun GreetingPreview() {
-//    OCRDemoForNutritionTheme {
-//        Greeting("Android")
-//    }
-//}
